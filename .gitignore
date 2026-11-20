@@ -16,3 +16,7 @@ outputs/
 .env
 .env.*
 !.env.example
+
+# website build
+_site/
+.cache/

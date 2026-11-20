@@ -1,0 +1,99 @@
+/* sMCC40M site theme: palette shared with the NeurIPS talk deck */
+:root {
+  --smcc-navy: #14202e;
+  --smcc-paper: #fcfcfa;
+  --smcc-teal: #0e7c72;
+  --smcc-teal-light: #5cc8b8;
+  --smcc-rust: #b9532f;
+  --smcc-rust-light: #f08a63;
+  --smcc-purple: #6b4fb3;
+  --smcc-purple-light: #b7a3f0;
+  --smcc-amber: #9a5f12;
+  --smcc-amber-light: #e8b27a;
+}
+
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: var(--smcc-navy);
+  --md-primary-fg-color--light: #2a3a4d;
+  --md-primary-fg-color--dark: #0c141d;
+  --md-accent-fg-color: var(--smcc-teal);
+  --md-typeset-a-color: var(--smcc-teal);
+  --md-default-bg-color: var(--smcc-paper);
+}
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: var(--smcc-navy);
+  --md-accent-fg-color: var(--smcc-teal-light);
+  --md-typeset-a-color: var(--smcc-teal-light);
+  --md-default-bg-color: #101922;
+}
+
+.md-header, .md-tabs { background-color: var(--smcc-navy); }
+
+.md-typeset h1, .md-typeset h2 { font-weight: 700; letter-spacing: -0.01em; }
+
+/* ---------- home hero ---------- */
+.smcc-hero {
+  position: relative;
+  margin: -1.2rem -1.2rem 2rem;
+  padding: 3.2rem 2.4rem 2.6rem;
+  background: var(--smcc-navy);
+  color: #f3efe6;
+  border-radius: 0 0 14px 14px;
+  overflow: hidden;
+}
+.smcc-hero::after {               /* soft cell glow, echoing the deck cover */
+  content: "";
+  position: absolute; right: -6rem; top: -4rem;
+  width: 26rem; height: 26rem; border-radius: 50%;
+  background: radial-gradient(circle, rgba(240,138,99,.35) 0%, rgba(92,200,184,.18) 40%, rgba(20,32,46,0) 70%);
+  pointer-events: none;
+}
+.smcc-hero .kicker {
+  font-family: var(--md-code-font-family); font-size: .72rem; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--smcc-teal-light); margin: 0 0 .6rem;
+}
+.md-typeset .smcc-hero h1 {
+  color: #f3efe6; font-size: 3.2rem; line-height: 1; margin: 0 0 .8rem; letter-spacing: -0.03em;
+}
+.smcc-hero .lede { font-size: 1.05rem; line-height: 1.5; max-width: 40rem; color: #d7dee5; margin: 0 0 1.4rem; }
+.smcc-hero .chips { display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: 1.4rem; }
+.smcc-hero .chip {
+  font-family: var(--md-code-font-family); font-size: .62rem; letter-spacing: .12em;
+  padding: .25rem .7rem; border-radius: 99px; color: var(--smcc-navy); font-weight: 600;
+}
+.chip.scale { background: var(--smcc-teal-light); }
+.chip.res { background: var(--smcc-rust-light); }
+.chip.ctx { background: var(--smcc-purple-light); }
+.md-typeset .smcc-hero .md-button { color: #f3efe6; border-color: #f3efe6; margin: 0 .4rem .4rem 0; }
+.md-typeset .smcc-hero .md-button--primary { background: var(--smcc-teal); border-color: var(--smcc-teal); }
+.md-typeset .smcc-hero .md-button:hover { background: var(--smcc-teal-light); border-color: var(--smcc-teal-light); color: var(--smcc-navy); }
+
+/* ---------- big numbers ---------- */
+.smcc-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr)); gap: 1rem; margin: 1.5rem 0 2rem; }
+.smcc-stat { border-top: 3px solid var(--smcc-teal); padding-top: .6rem; }
+.smcc-stat .n { font-size: 1.8rem; font-weight: 700; line-height: 1.1; color: var(--smcc-teal); letter-spacing: -0.02em; }
+.smcc-stat .l { font-size: .74rem; line-height: 1.35; opacity: .8; }
+.smcc-stat.rust { border-color: var(--smcc-rust); } .smcc-stat.rust .n { color: var(--smcc-rust); }
+.smcc-stat.purple { border-color: var(--smcc-purple); } .smcc-stat.purple .n { color: var(--smcc-purple); }
+.smcc-stat.amber { border-color: var(--smcc-amber); } .smcc-stat.amber .n { color: var(--smcc-amber); }
+[data-md-color-scheme="slate"] .smcc-stat .n { filter: brightness(1.5); }
+
+/* ---------- tutorial cards ---------- */
+.md-typeset .grid.cards > ul > li { border-radius: 12px; }
+.md-typeset .grid.cards > ul > li:hover { border-color: var(--smcc-teal); }
+.smcc-step {
+  display: inline-block; font-family: var(--md-code-font-family); font-size: .62rem;
+  letter-spacing: .12em; color: var(--smcc-teal); text-transform: uppercase;
+}
+
+/* ---------- latest updates list (filled by hooks/latest_updates.py) ---------- */
+.md-typeset .smcc-updates ul { list-style: none; margin: 0 0 1.2rem; padding: 0; }
+.md-typeset .smcc-updates li { margin: 0; padding: .7rem 0; border-bottom: 1px solid var(--md-default-fg-color--lightest); }
+.smcc-updates .date { display: block; font-family: var(--md-code-font-family); font-size: .66rem; color: var(--smcc-amber); letter-spacing: .06em; text-transform: uppercase; }
+[data-md-color-scheme="slate"] .smcc-updates .date { color: var(--smcc-amber-light); }
+.md-typeset .smcc-updates a.title { font-weight: 700; font-size: .9rem; }
+.smcc-updates .excerpt { display: block; font-size: .76rem; opacity: .85; }
+
+/* figures */
+.md-typeset figure img { border-radius: 8px; }
+.md-typeset table:not([class]) th { background: rgba(14,124,114,.08); }

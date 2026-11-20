@@ -1,0 +1,5 @@
+# Website build (mkdocs build --strict). Not needed to use the data or run the benchmark.
+mkdocs==1.6.1
+mkdocs-material==9.7.7
+mkdocs-jupyter>=0.25,<0.26
+beautifulsoup4>=4,<5
