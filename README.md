@@ -2,7 +2,7 @@
 
 **A context-aware resource and benchmark for cell-aligned spatial transcriptomics.**
 
-**[Website source and tutorials](website/)** · [Download on Hugging Face](https://huggingface.co/datasets/zhang-lab/sMCC40M) · [Data and release](docs/data.md) · [Benchmark](benchmark/README.md) · [Full results](results/README.md) · [QC](docs/quality_control.md) · [Release notes](CHANGELOG.md)
+**[Website and tutorials](https://xenali96.github.io/sMMC40M/)** · [Download on Hugging Face](https://huggingface.co/datasets/zhang-lab/sMCC40M) · [Data and release](docs/data.md) · [Benchmark](benchmark/README.md) · [Full results](results/README.md) · [QC](docs/quality_control.md) · [Release notes](CHANGELOG.md)
 
 ![sMMC-40M resource overview](assets/dataset.png)
 
